@@ -1,6 +1,6 @@
 require 'sinatra'
 
-get '/' do
-  @nombre = params["nombre"] ? params["nombre"] : "desconocido!"
+get '/maker/:nombre' do
+  @nombre = params["nombre"].capitalize
   erb :index
 end
