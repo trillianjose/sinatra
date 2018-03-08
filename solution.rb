@@ -1,6 +1,10 @@
 require 'sinatra'
 
-get '/makers/:nombre' do
-  @nombre = params["nombre"].capitalize
+get '/' do
+  @name = params["name"]
   erb :index
+end
+
+post '/solution' do
+  "¡Hola #{params[:name]}!"
 end
