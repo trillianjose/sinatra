@@ -13,14 +13,24 @@ require 'sinatra'
 #  '">HcUy6Re2LLBRtj'
 #end
 
+# get "/" do
+#   sentence = "<h4>Hola</h4><br>"
+#   for number in 1..50 do
+#     if number % 2 == 0
+#       sentence += "<b>#{number} Soy Par!</b><br>"
+#     else
+#       sentence += "<b>#{number} Soy Impar!</b><br>"
+#     end
+#   end
+#   sentence
+# end
+
 get "/" do
-  sentence = "<h4>Hola</h4><br>"
-  for number in 1..50 do
-    if number % 2 == 0
-      sentence += "<b>#{number} Soy Par!</b><br>"
-    else
-      sentence += "<b>#{number} Soy Impar!</b><br>"
-    end
-  end
-  sentence
+  @cuenta = 0
+  erb :index
+end
+
+get "/sum" do
+  @cuenta = params[:actual_sum].to_i + 1
+  erb :index, locals: { actual_sum: @cuenta }
 end
