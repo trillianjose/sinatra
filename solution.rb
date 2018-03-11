@@ -25,12 +25,26 @@ require 'sinatra'
 #   sentence
 # end
 
+# get "/" do
+#   @cuenta = 0
+#   erb :index
+# end
+#
+# get "/sum" do
+#   @cuenta = params[:actual_sum].to_i + 1
+#   erb :index, locals: { actual_sum: @cuenta }
+# end
+
 get "/" do
-  @cuenta = 0
-  erb :index
+  erb :index2
 end
 
-get "/sum" do
-  @cuenta = params[:actual_sum].to_i + 1
-  erb :index, locals: { actual_sum: @cuenta }
+get "/answer" do
+  @nona_response = params[:nona_response]
+  if @nona_response == @nona_response.upcase
+    r = "<h1>Ahhh si, manzanas!</h1>"
+  else
+    r = "<h1>Habla mas duro mijito</h1>"
+  end
+  r
 end
