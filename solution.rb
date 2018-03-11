@@ -9,6 +9,17 @@ require 'sinatra'
 #  "¡Hola #{params[:name]}!"
 #end
 
+#get "/" do
+#  '">HcUy6Re2LLBRtj'
+#end
+
 get "/" do
-  '">HcUy6Re2LLBRtj'
+  "Hola"
+  for number in 1..50 do
+   if number % 2 == 0
+     "#{number} Soy Par!\n"
+   else
+     "#{number} Soy Impar!\n"
+   end
+  end
 end
