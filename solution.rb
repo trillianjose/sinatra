@@ -14,12 +14,13 @@ require 'sinatra'
 #end
 
 get "/" do
-  "Hola"
+  sentence = "<h4>Hola</h4><br>"
   for number in 1..50 do
-   if number % 2 == 0
-     "#{number} Soy Par!\n"
-   else
-     "#{number} Soy Impar!\n"
-   end
+    if number % 2 == 0
+      sentence += "<b>#{number} Soy Par!</b><br>"
+    else
+      sentence += "<b>#{number} Soy Impar!</b><br>"
+    end
   end
+  sentence
 end
