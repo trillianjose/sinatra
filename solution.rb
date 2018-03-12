@@ -35,16 +35,20 @@ require 'sinatra'
 #   erb :index, locals: { actual_sum: @cuenta }
 # end
 
-get "/" do
-  erb :index2
-end
+# get "/" do
+#   erb :index2
+# end
+#
+# get "/answer" do
+#   @nona_response = params[:nona_response]
+#   if @nona_response == @nona_response.upcase
+#     r = "<h1>Ahhh si, manzanas!</h1>"
+#   else
+#     r = "<h1>Habla mas duro mijito</h1>"
+#   end
+#   r
+# end
 
-get "/answer" do
-  @nona_response = params[:nona_response]
-  if @nona_response == @nona_response.upcase
-    r = "<h1>Ahhh si, manzanas!</h1>"
-  else
-    r = "<h1>Habla mas duro mijito</h1>"
-  end
-  r
+get "/" do
+  request.user_agent
 end
