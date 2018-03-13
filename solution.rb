@@ -49,6 +49,16 @@ require 'sinatra'
 #   r
 # end
 
+# get "/" do
+#   request.user_agent
+# end
+
+
 get "/" do
-  request.user_agent
+  if env['HTTP_PERMISO'] == "soy-un-token-secreto"
+    r = "Si lo logramos!"
+  else
+    r = "Sin Permiso"
+  end
+  r
 end
